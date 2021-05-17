@@ -2,4 +2,112 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-color: #fafafb;
+  width: 100%;
+  height: 3681px;
+  overflow: hidden;
+}
+
+.header {
+  margin: 0;
+  padding: 63px 120px 0 120px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eef7fe), to(#f3f3fb));
+  background-image: linear-gradient(180deg, #eef7fe 0%, #f3f3fb 100%);
+  height: 502px;
+  position: relative;
+}
+
+.header__title {
+  font-family: Saira;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #000248;
+  position: absolute;
+  top: 248px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__decoration__first {
+  position: absolute;
+  width: 287px;
+  height: 313px;
+  left: -80px;
+  top: -43px;
+  z-index: 0;
+}
+
+.nav__decoration__second {
+  position: absolute;
+  width: 1560px;
+  height: 282px;
+  left: 595px;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3.12%, rgba(238, 247, 254, 0.45)), to(rgba(245, 246, 254, 0.15)));
+  background: linear-gradient(180deg, rgba(238, 247, 254, 0.45) 3.12%, rgba(245, 246, 254, 0.15) 100%);
+}
+
+.nav__logo {
+  z-index: 1;
+}
+
+.nav__logo__image {
+  height: 88px;
+}
+
+.nav__list {
+  list-style: none;
+}
+
+.nav__list__item {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.nav__list__item__content {
+  height: 36px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  color: #000248;
+  text-decoration: none;
+}
+
+.nav__list__item__content--active {
+  color: #0028ff;
+}
+
+.nav__list__item__cta {
+  outline: none;
+  background-color: #0d2fd1;
+  border: none;
+  color: #ffffff;
+  padding: 14px 60px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 150%;
+}
 /*# sourceMappingURL=main.css.map */
