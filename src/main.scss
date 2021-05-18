@@ -282,3 +282,19 @@ main {
     }
   }
 }
+footer {
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 6vw;
+  height: 7vh;
+  background: #00004b;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+}
