@@ -126,10 +126,13 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .description__side__left {
   width: 40%;
+  min-width: 570px;
 }
 
 .description__side__right {
@@ -273,5 +276,93 @@ main {
   letter-spacing: 0.01em;
   color: #8e8aa1;
   margin: 2vw 0 4vw 0;
+}
+
+.cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaf7ff), to(#f3f4fd));
+  background: linear-gradient(180deg, #eaf7ff 0%, #f3f4fd 100%);
+  text-align: center;
+  padding: 5vh 0;
+}
+
+.cta__quote {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  color: #42d9ff;
+  background: #d5f3ff;
+  padding: 10px 15px;
+}
+
+.cta__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 150%;
+  color: #000000;
+  margin: 4vh 0;
+}
+
+.cta__btn {
+  padding: 8px 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: -0.04em;
+  background-color: #fff;
+  color: #0d2fd1;
+  border: 3px solid #0d2fd1;
+}
+
+.cta__btn img {
+  margin-left: 10px;
+}
+
+.cta__contact {
+  width: 25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 10vh;
+}
+
+.cta__contact__text {
+  padding: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8e8aa1;
+  margin-right: 70px;
+}
+
+.cta__contact__number {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  color: #000000;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */

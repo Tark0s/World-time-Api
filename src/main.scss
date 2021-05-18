@@ -52,8 +52,6 @@ body {
   }
   &__logo {
     z-index: 1;
-    &__image {
-    }
   }
   &__list {
     list-style: none;
@@ -98,9 +96,11 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   &__side {
     &__left {
       width: 40%;
+      min-width: 570px;
     }
     &__right {
       width: 50%;
@@ -208,6 +208,77 @@ main {
         color: #8e8aa1;
         margin: 2vw 0 4vw 0;
       }
+    }
+  }
+}
+//cta
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  background: linear-gradient(180deg, #eaf7ff 0%, #f3f4fd 100%);
+  text-align: center;
+  padding: 5vh 0;
+  &__quote {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: #42d9ff;
+    background: #d5f3ff;
+    padding: 10px 15px;
+  }
+  &__title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 150%;
+    color: #000000;
+    margin: 4vh 0;
+  }
+  &__btn {
+    padding: 8px 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: -0.04em;
+    background-color: #fff;
+    color: #0d2fd1;
+    border: 3px solid #0d2fd1;
+    & img {
+      margin-left: 10px;
+    }
+  }
+  &__contact {
+    width: 25vw;
+    display: flex;
+    align-self: center;
+    margin-top: 10vh;
+
+    &__text {
+      padding: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #8e8aa1;
+      margin-right: 70px;
+    }
+    &__number {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 150%;
+      color: #000000;
+      margin-left: 10px;
     }
   }
 }
