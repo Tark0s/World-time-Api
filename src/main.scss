@@ -4,15 +4,16 @@
 }
 body {
   background-color: #fafafb;
-  width: 100%;
-  height: 3681px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 //header
 .header {
   margin: 0;
-  padding: 63px 120px 0 120px;
+  box-sizing: border-box;
+  padding: 63px 4vw 0 6vw;
   background-image: linear-gradient(180deg, #eef7fe 0%, #f3f3fb 100%);
-  height: 502px;
+  height: 50vh;
   position: relative;
   &__title {
     font-family: Saira;
@@ -23,7 +24,7 @@ body {
     letter-spacing: 0.02em;
     color: #000248;
     position: absolute;
-    top: 248px;
+    top: 25vh;
   }
 }
 .nav {
@@ -40,7 +41,7 @@ body {
     }
     &__second {
       position: absolute;
-      left: 595px;
+      left: 30vw;
       bottom: 0;
       background: linear-gradient(
         180deg,
@@ -52,7 +53,6 @@ body {
   &__logo {
     z-index: 1;
     &__image {
-      height: 88px;
     }
   }
   &__list {
@@ -73,7 +73,7 @@ body {
           color: #0028ff;
         }
       }
-      &__cta {
+      &__btn {
         outline: none;
         background-color: #0d2fd1;
         border: none;
@@ -89,13 +89,15 @@ body {
   }
 }
 main {
-  padding: 120px;
+  display: flex;
+  flex-direction: column;
 }
 // description
 .description {
-  width: 100%;
+  padding: 4vw 4vw 0 6vw;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   &__side {
     &__left {
       width: 40%;
@@ -119,6 +121,92 @@ main {
         line-height: 150%;
         letter-spacing: 0.01em;
         color: #8e8aa1;
+      }
+    }
+  }
+}
+//clients
+.clients {
+  text-align: center;
+  &__title {
+    font-family: Saira;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 150%;
+    color: #000248;
+    margin-top: 87px;
+    margin-bottom: 40px;
+  }
+  &__filter_bar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: s;
+    padding: 0 6vw;
+    width: 100vw;
+    height: 150px;
+    background: #fcfcff;
+    box-shadow: 0px 6px 12px -6px #e6e6e6,
+      0px 8px 24px -4px rgba(222, 222, 222, 0.08);
+    &__list {
+      display: flex;
+      flex-direction: row;
+      &__item {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 150%;
+        color: #000248;
+        display: inline-block;
+        margin-right: 100px;
+
+        &--active {
+          color: #0d2fd1;
+        }
+      }
+    }
+    &__option {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 150%;
+      color: #000248;
+      margin-left: 45vw;
+    }
+  }
+  &__container {
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 4vw 6vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__brand {
+      width: 20vw;
+      min-width: 400px;
+      &__logo {
+        display: grid;
+        place-content: center;
+
+        height: 10vw;
+        background-color: #fff;
+        border-radius: 6px;
+      }
+      &__desc {
+        text-align: left;
+        font-family: Saira;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.01em;
+        color: #8e8aa1;
+        margin: 2vw 0 4vw 0;
       }
     }
   }
