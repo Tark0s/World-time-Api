@@ -1,0 +1,11 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    rgb(38, 31, 138),
+    rgb(22, 40, 121)
+  );
+  background-attachment: fixed;
+  background-repeat: repeat;
+  display: grid;
+  place-content: center;
+}
