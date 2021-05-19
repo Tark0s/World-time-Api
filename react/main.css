@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-image: linear-gradient(
     to right top,
@@ -11,9 +16,17 @@ body {
   color: rgb(228, 228, 228);
   font-family: "VT323", monospace;
   font-size: 48px;
+  padding: 5vw;
 }
 .clock {
+  width: 10vw;
   padding: 30px;
+  margin: 2vw;
   border: 3px solid white;
   border-radius: 6px;
+  text-align: center;
+}
+small {
+  color: orange;
+  font-size: 35px;
 }
