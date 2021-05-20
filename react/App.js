@@ -1,44 +1,58 @@
-const UserTime = (props) => {
+//component shwoing times
+const Clock = (props) => {
   const { hours, minutes } = props.content;
-
   return (
     <>
-      <p>User Time</p>
+      <p>{props.name} Time</p>
       <div className="clock">
-        {`${hours > 9 ? hours : "0" + hours}:${
-          minutes > 9 ? minutes : "0" + minutes
-        }`}
+        {props.ready
+          ? `${hours > 9 ? hours : "0" + hours}:${
+              minutes > 9 ? minutes : "0" + minutes
+            }`
+          : "loading..."}
       </div>
     </>
   );
 };
-const ApiTime = (props) => {
-  const { datetime } = props.content;
-  let information = datetime;
-  let hours = "hours";
-  if (information === undefined) {
+//component showing time difference
+const TimeDiff = (props) => {
+  const { api, user, ready } = props;
+
+  if (ready) {
+    let diff = (api.getTime() - user.getTime()) / 1000;
+    diff /= 60;
+    diff = Math.abs(Math.round(diff));
+    return (
+      <>
+        <p>Time difference</p>
+        <div className="clock">{diff} Minutes</div>
+      </>
+    );
   } else {
-    console.log(information);
-    hours = information.substring(11, 16);
+    return (
+      <>
+        <p>Time difference</p>
+        <div className="clock">loading...</div>
+      </>
+    );
   }
-
-  return (
-    <>
-      <p>
-        Api Time <small>(server speed: slow)</small>
-      </p>
-      <div className="clock">{props.ready ? hours : "loading..."}</div>
-    </>
-  );
 };
-
+//main class component
 class Time extends React.Component {
   state = {
+    userDate: [],
     userTime: this.getUserTime(),
-    apiTime: [],
+    apiDate: [],
+    apiTime: {},
     isApiReady: false,
   };
-
+  //user
+  setUserDate = () => {
+    const userDate = new Date();
+    this.setState({
+      userDate,
+    });
+  };
   getUserTime() {
     const time = new Date();
     return {
@@ -48,33 +62,48 @@ class Time extends React.Component {
   }
   setUserTime = () => {
     const userTime = this.getUserTime();
-
     this.setState({ userTime });
   };
-  setApiTime = () => {
+  //api
+  setApiDate = () => {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "http://worldtimeapi.org/api/timezone/Europe/Madrid", true);
     xhr.onload = () => {
       if (xhr.status === 200) {
-        const apiTime = JSON.parse(xhr.response);
+        const apiDate = JSON.parse(xhr.response);
         this.setState({
-          apiTime,
+          apiDate: new Date(apiDate.datetime),
           isApiReady: true,
         });
       }
     };
     xhr.send();
   };
-  componentDidMount() {
-    setInterval(this.setUserTime, 1000);
-    setTimeout(setInterval(this.setApiTime, 1000), 3000);
-  }
+  setApiTime = () => {
+    if (this.state.isApiReady) {
+      const time = this.state.apiDate;
+      this.setState({
+        apiTime: {
+          hours: time.getHours(),
+          minutes: time.getMinutes(),
+        },
+      });
+    }
+  };
 
+  componentDidMount() {
+    setInterval(this.setUserDate, 1000);
+    setInterval(this.setUserTime, 1000);
+    setInterval(this.setApiDate, 1000);
+    setInterval(this.setApiTime, 1000);
+  }
   render() {
+    const { apiDate, userDate, userTime, apiTime, isApiReady } = this.state;
     return (
       <>
-        <UserTime content={this.state.userTime} />
-        <ApiTime content={this.state.apiTime} ready={this.state.isApiReady} />
+        <Clock content={userTime} name="User" ready={true} />
+        <Clock content={apiTime} name="Api" ready={isApiReady} />
+        <TimeDiff api={apiDate} user={userDate} ready={isApiReady} />
       </>
     );
   }
